@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For the Coast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,500&family=Inter:wght@300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --linen: #F9F7F2;
+            --seafoam: #D1E8E2;
+            --sand: #EFE5D8;
+            --driftwood: #5D5C58;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: var(--linen);
+            font-family: 'Inter', sans-serif;
+            color: var(--driftwood);
+            overflow-x: hidden;
+        }
+
+        /* The Film Grain Overlay */
+        .grain {
+            position: fixed;
+            top: 0; left: 0; height: 100%; width: 100%;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.04;
+            background-image: url('https://media.giphy.com/media/oEI9uWUicKgH6/giphy.gif');
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(249, 247, 242, 0.7), rgba(249, 247, 242, 0.7)),
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        /* Poetic Message */
+        .message-section {
+            padding: 150px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .poetic-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #444;
+        }
+
+        /* Polaroid Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 100px 20px;
+            background-color: var(--sand);
+        }
+
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: rotate(-2deg);
+            transition: transform 0.4s ease;
+        }
+
+        .polaroid:nth-child(even) {
+            transform: rotate(3deg);
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .polaroid img {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            filter: sepia(20%) contrast(90%);
+        }
+
+        footer {
+            padding: 100px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            opacity: 0.6;
+        }
+
+        /* Simple Audio Player Style */
+        .audio-player {
+            margin-top: 30px;
+            border-radius: 50px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .audio-player:hover { opacity: 1; }
+
+    </style>
+</head>
+<body>
+
+    <div class="grain"></div>
+
+    <header>
+        <div class="subtitle">A Memory of the Tide</div>
+        <h1>West Coast Dreams</h1>
+        <audio controls class="audio-player">
+            <source src="music/west-coast.mp3" type="audio/mpeg">
+        </audio>
+    </header>
+
+    <section class="message-section">
+        <p class="poetic-text">
+            "Like the tide, things change, but the shore remembers every wave. 
+            I am carrying the light of what we shared, forever grateful for the season 
+            we spent under the same sun."
+        </p>
+    </section>
+
+    <section class="gallery">
+        <div class="polaroid">
+            <img src="images/memory1" alt="Moment 1">
+        </div>
+        <div class="polaroid">
+            <img src="images/memory2.jpg" alt="Moment 2">
+        </div>
+        <div class="polaroid">
+            <img src="images/memory3.jpg" alt="Moment 3">
+        </div>
+    </section>
+
+    <footer>
+        Still your biggest fan, from a different shore.
+    </footer>
+
+</body>
+</html>
